@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:sample1/reusable_appbar.dart';
 
 class Screen2 extends StatelessWidget {
-  final Function toggleTheme;
-  const Screen2({Key? key, required this.toggleTheme}) : super(key: key);
+  const Screen2({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ReusableAppBar(title: 'Screen 2', toggleTheme: toggleTheme),
+      appBar: const ReusableAppBar(title: 'Screen 2'),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

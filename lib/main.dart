@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sample1/providers/theme_provider.dart';
 import 'package:sample1/screen_1.dart';
 import 'package:sample1/screen_2.dart';
 import 'package:sample1/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider<ThemeNotifier>(
+    create: (_) => ThemeNotifier(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -15,27 +20,21 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  bool isDarkMode = false;
-
-  void toggleTheme() {
-    setState(() {
-      isDarkMode = !isDarkMode;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return MaterialApp(
-      themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      darkTheme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
+      themeMode: themeNotifier.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => Screen1(toggleTheme: toggleTheme),
+        '/': (context) => const Screen1(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => Screen2(toggleTheme: toggleTheme),
+        '/second': (context) => const Screen2(),
       },
     );
   }

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sample1/providers/theme_provider.dart';
 
 class ReusableAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  final Function toggleTheme;
 
-  const ReusableAppBar(
-      {Key? key, required this.title, required this.toggleTheme})
-      : super(key: key);
+  const ReusableAppBar({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,8 @@ class ReusableAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.brightness_6),
-          onPressed: () => toggleTheme(),
+          onPressed: () =>
+              Provider.of<ThemeNotifier>(context, listen: false).toggleTheme(),
         ),
       ],
     );
