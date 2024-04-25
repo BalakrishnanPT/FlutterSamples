@@ -8,6 +8,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
+        actions: <Widget>[
+          IconButton(icon: const Icon(Icons.brightness_6), onPressed: () => {
+            
+          }),
+        ],
       ),
       body: const Center(
         child: Text('Welcome to the home page!'),
