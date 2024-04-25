@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample1/home.dart';
+import 'package:sample1/screen_1.dart';
+import 'package:sample1/screen_2.dart';
 import 'package:sample1/theme.dart';
 
 void main() {
@@ -30,7 +31,12 @@ class MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: HomePage(toggleTheme: toggleTheme),
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => Screen1(toggleTheme: toggleTheme),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/second': (context) => Screen2(toggleTheme: toggleTheme),
+      },
     );
   }
 }
