@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final Function toggleTheme;
+
+  const HomePage({Key? key, required this.toggleTheme}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +11,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: <Widget>[
-          IconButton(icon: const Icon(Icons.brightness_6), onPressed: () => {}),
+          IconButton(
+            icon: const Icon(Icons.brightness_6),
+            onPressed: () => toggleTheme(),
+          ),
         ],
       ),
       body: const Center(
