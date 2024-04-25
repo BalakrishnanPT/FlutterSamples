@@ -3,7 +3,7 @@ import 'package:sample1/home.dart';
 import 'package:sample1/theme.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
