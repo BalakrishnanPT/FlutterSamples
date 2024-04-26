@@ -12,9 +12,10 @@ class Screen2 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            const SelectableText(
               'Widgets',
               style: TextStyle(fontSize: 18.0),
+              maxLines: 2,
             ),
             const SizedBox(height: 20.0),
             Image.asset(
@@ -22,12 +23,12 @@ class Screen2 extends StatelessWidget {
               height: 100.0,
             ),
             const SizedBox(height: 20.0),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              decoration: const InputDecoration(
                 hintText: 'Enter your name',
                 labelText: 'Name',
-                border: OutlineInputBorder(),
               ),
+              onChanged: (value) {},
             ),
             const SizedBox(height: 20.0),
             Row(

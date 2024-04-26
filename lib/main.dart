@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sample1/providers/theme_provider.dart';
 import 'package:sample1/screen_1.dart';
 import 'package:sample1/screen_2.dart';
+import 'package:sample1/screen_3.dart';
 import 'package:sample1/theme.dart';
 
 void main() {
@@ -35,6 +36,7 @@ class MyAppState extends State<MyApp> {
         '/': (context) => const Screen1(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const Screen2(),
+        '/third': (context) => const Screen3(),
       },
     );
   }
