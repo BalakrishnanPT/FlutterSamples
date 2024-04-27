@@ -25,6 +25,12 @@ class Screen1 extends StatelessWidget {
                   Navigator.pushNamed(context, "/third");
                 },
               ),
+               ElevatedButton(
+                child: const Text('Go to Screen 3'),
+                onPressed: () {
+                  Navigator.pushNamed(context, "/calculator");
+                },
+              ),
             ],
           )),
     );

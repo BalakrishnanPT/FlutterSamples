@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sample1/calculator_page.dart';
 import 'package:sample1/providers/theme_provider.dart';
 import 'package:sample1/screen_1.dart';
 import 'package:sample1/screen_2.dart';
@@ -37,6 +38,7 @@ class MyAppState extends State<MyApp> {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const Screen2(),
         '/third': (context) => const Screen3(),
+        '/calculator': (context) => const CalculatorScreen(),
       },
     );
   }
